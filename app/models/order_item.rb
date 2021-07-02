@@ -1,2 +1,2 @@
-class OrderItem < ApplicationRecord
+class OrderItem < EventedRecord
 end

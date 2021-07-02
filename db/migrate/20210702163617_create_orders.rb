@@ -5,6 +5,7 @@ class CreateOrders < ActiveRecord::Migration[6.1]
       t.integer :table_number
       t.integer :subtotal, null: true
       t.integer :tip, null: true
+      t.uuid :uuid, default: "gen_random_uuid()", null: false
 
       t.timestamps
     end

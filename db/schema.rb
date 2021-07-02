@@ -13,11 +13,14 @@
 ActiveRecord::Schema.define(version: 2021_07_02_163630) do
 
   # These are extensions that must be enabled in order to support this database
+  enable_extension "pgcrypto"
   enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
 
   create_table "menu_items", force: :cascade do |t|
     t.string "name", null: false
     t.integer "price", null: false
+    t.uuid "uuid", default: -> { "gen_random_uuid()" }, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -25,6 +28,7 @@ ActiveRecord::Schema.define(version: 2021_07_02_163630) do
   create_table "order_items", force: :cascade do |t|
     t.integer "order_id"
     t.integer "menu_item_id"
+    t.uuid "uuid", default: -> { "gen_random_uuid()" }, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -34,6 +38,7 @@ ActiveRecord::Schema.define(version: 2021_07_02_163630) do
     t.integer "table_number"
     t.integer "subtotal"
     t.integer "tip"
+    t.uuid "uuid", default: -> { "gen_random_uuid()" }, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

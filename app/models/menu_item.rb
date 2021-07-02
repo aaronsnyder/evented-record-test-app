@@ -1,2 +1,2 @@
-class MenuItem < ApplicationRecord
+class MenuItem < EventedRecord
 end

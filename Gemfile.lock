@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/aaronsnyder/evented-record.git
-  revision: 0b4201683b847ab56090561da9e227e0f3b6848a
+  revision: f5088ec97db630f70a158f06111a9f57bbf84b57
   branch: master
   specs:
     evented-record (0.0.0)
